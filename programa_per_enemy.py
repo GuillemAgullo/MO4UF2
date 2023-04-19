@@ -1,13 +1,23 @@
-from xml.dom import minidom
+import xmltodict
 import random
 
-doc = minidom.parse("C:\\Users\\guima\\Documents\\MO4UF2\\enemy.xml")
+
+
+#CARREGUEM ELS ARXIUS:
+llista_enemy = ["enemy.xml", "enemy2.xml", "enemy3.xml", "enemy4.xml"]
+eleccio_llista = random.choice(llista_enemy)
+
+with open(eleccio_llista, "r") as f:
+    xml_string = f.read()
+
+#CONVERTIR EL ARCHIVO XML A UN DICCIONARIO PYTHON
+enemy_dict = xmltodict.parse(xml_string)
 
 #DATOS
-nom = doc.getElementsByTagName("name")[0].firstChild.nodeValue
-desc = doc.getElementsByTagName("description")[0].firstChild.nodeValue
-vida = int(doc.getElementsByTagName("hp")[0].firstChild.nodeValue)
-dmg = int(doc.getElementsByTagName("dmg")[0].firstChild.nodeValue)
+nom = enemy_dict["enemy"]["name"]
+desc = enemy_dict["enemy"]["description"]
+vida = int(enemy_dict["enemy"]["hp"])
+dmg = int(enemy_dict["enemy"]["dmg"])
 vida_player = 7
 
 print("Encontraste a un enemigo. Si me hago entender?")
@@ -20,7 +30,7 @@ print("Su daño es de: "+str(dmg))
 
 fideljoc:bool = False
 
-while fideljoc == False:
+while not(fideljoc):
     print("\n Escribe ataca para atacar:")
     atac = input(">>>")
     if atac == "ataca":

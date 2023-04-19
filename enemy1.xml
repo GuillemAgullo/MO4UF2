@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<enemy>
+    <name>Nano user</name>
+    <description>usa nano, nada mas que añadir</description>
+    <hp>20</hp>
+    <dmg>3</dmg>
+</enemy>

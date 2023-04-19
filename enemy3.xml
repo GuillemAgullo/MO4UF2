@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<enemy id="4">
+    <name>Pablo</name>
+    <description>Se dispone a beber chocomel.</description>
+    <hp>10</hp>
+    <dmg>5</dmg>
+</enemy>
