@@ -4,14 +4,13 @@ import random
 
 
 #CARREGUEM ELS ARXIUS:
-llista_enemy = ["enemy.xml", "enemy2.xml", "enemy3.xml", "enemy4.xml"]
+llista_enemy = ["C:\\Users\\guima\\Documents\\MO4UF2\\enemy.xml", "C:\\Users\\guima\\Documents\\MO4UF2\\enemy1.xml", "C:\\Users\\guima\\Documents\\MO4UF2\\enemy2.xml","C:\\Users\\guima\\Documents\\MO4UF2\\enemy3.xml"]
 eleccio_llista = random.choice(llista_enemy)
 
 with open(eleccio_llista, "r") as f:
     xml_string = f.read()
-
-#CONVERTIR EL ARCHIVO XML A UN DICCIONARIO PYTHON
-enemy_dict = xmltodict.parse(xml_string)
+    #CONVERTIR EL ARCHIVO XML A UN DICCIONARIO PYTHON
+    enemy_dict = xmltodict.parse(xml_string)
 
 #DATOS
 nom = enemy_dict["enemy"]["name"]
